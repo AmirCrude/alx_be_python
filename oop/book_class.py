@@ -1,12 +1,20 @@
-
 class Book:
+    """A class representing a book with magic methods."""
+    
     def __init__(self, title, author, year):
+        """Constructor to initialize book attributes."""
         self.title = title
         self.author = author
         self.year = year
+    
     def __del__(self):
-        print(f'Book "{self.title}" by {self.author} ({self.year}) is being deleted.')
+        """Destructor to print message when object is deleted."""
+        print(f"Deleting {self.title}")
+    
     def __str__(self):
-        return f'"{self.title}" by {self.author} ({self.year})'
+        """User-friendly string representation of the book."""
+        return f"{self.title} by {self.author}, published in {self.year}"
+    
     def __repr__(self):
-        return f'Book(title="{self.title}", author="{self.author}", year={self.year})'
+        """Official representation that can recreate the object."""
+        return f"Book('{self.title}', '{self.author}', {self.year})"
